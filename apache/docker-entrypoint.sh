@@ -1,6 +1,11 @@
 #!/bin/bash
 set -e
 
+if [ "$NR_INSTALL_KEY" == "**ChangeMe**" ]; then
+   echo >&2 'error: missing NR_INSTALL_KEY environment variable'
+   exit 1
+fi
+
 if [[ "$1" == apache2* ]]; then
 	if [ -n "$MYSQL_PORT_3306_TCP" ]; then
 		if [ -z "$WORDPRESS_DB_HOST" ]; then
