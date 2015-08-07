@@ -6,6 +6,7 @@ if [ "$NR_INSTALL_KEY" == "**ChangeMe**" ]; then
    exit 1
 else
    newrelic-install install
+   perl -p -i -e "s/newrelic.appname.*=.*/newrelic.appname = \"`hostname -s`\"/g" $NR_PHP_INI
 fi
 
 if [[ "$1" == apache2* ]]; then

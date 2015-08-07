@@ -20,6 +20,7 @@ ENV WORDPRESS_VERSION 4.2.4
 ENV WORDPRESS_SHA1 9c90d175e0e64f51681101058a820cd76475949a
 ENV NR_INSTALL_SILENT true
 ENV NR_INSTALL_KEY **ChangeMe**
+ENV NR_PHP_INI /usr/local/etc/php/conf.d/newrelic.ini
 
 # upstream tarballs include ./wordpress/ so this gives us /usr/src/wordpress
 RUN curl -o wordpress.tar.gz -SL https://wordpress.org/wordpress-${WORDPRESS_VERSION}.tar.gz \
